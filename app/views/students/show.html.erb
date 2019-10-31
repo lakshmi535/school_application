@@ -1,0 +1,53 @@
+<h1>Progress Report</h1>
+<p>
+  <strong>stuname:</strong>
+  <%= @student.stuname %>
+</p>
+ 
+<p>
+  <strong>section:</strong>
+  <%= @student.section %>
+</p>
+<p>
+	<% if @student.telugu < 35 %>
+        <h2 style="color:Red;">
+        	<strong>telugu:</strong>
+         	<%= @student.telugu %>
+        </h2>
+
+    <% else %>
+        <strong>telugu:</strong>
+        <%= @student.telugu %>
+    <% end %> 
+</p>  
+<p>
+    <% if @student.english < 35 %>
+         <h2 style="color:Red;">
+        	<strong>english:</strong>
+         	<%= @student.english %>
+        </h2>
+    <% else %>
+       	<strong>english:</strong>
+       	<%= @student.english %>
+    <% end %> 
+</p>       
+<p>
+    <% if @student.hindi < 35 %>
+        <h2 style="color:Red;">
+        	<strong>hindi:</strong>
+         	<%= @student.hindi %>
+        </h2>
+    <% else %>
+      	<strong>hindi:</strong>
+       	<%= @student.hindi %>
+    <% end %> 
+</p>            
+
+total:<%= @student.telugu+@student.english+@student.hindi %><br><br>
+percentage:<%= (@student.telugu+@student.english+@student.hindi) / 3 %><br> <br>
+
+<%= link_to "Back", students_path %>
+
+
+
+

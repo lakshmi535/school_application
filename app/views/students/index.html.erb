@@ -1,0 +1,28 @@
+<h1>students details</h1>
+ <%= link_to 'New students details', new_student_path %>
+<table>
+  <tr>
+    <th>stuname</th>
+    <th>section</th>
+   <!--  <th>telugu</th>
+    <th>english</th>
+    <th>hindi</th> -->
+    <th></th>
+  </tr>
+ 
+  <% @students.each do |student| %>
+    <tr>
+
+      <td><%= link_to student.stuname,student_path(student) %></td> 
+      <td><%=  student.section %></td>
+      <!-- <td><%= student.telugu %></td>
+      <td><%= student.english%></td>
+      <td><%= student.hindi%></td> -->
+     <!--  <td><%= link_to 'Show', student_path(student) %></td> -->
+      <td><%= link_to 'Edit', edit_student_path(student) %></td>
+      <td><%= link_to 'Destroy', student_path(student),method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+     
+    </tr>
+  <% end %>
+</table>
